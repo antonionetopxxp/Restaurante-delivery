@@ -1,1 +1,1038 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
 
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Nexus Restaurant OS - Sistema completo de gestão para restaurantes">
+
+    <title>Nexus Restaurant OS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         MENU LATERAL
+    ========================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">N</div>
+
+            <div>
+                <h1>NEXUS</h1>
+                <span>Restaurant OS</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+
+            <button class="menu-item active"
+                    data-section="dashboard">
+                <span>📊</span>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="menu-item"
+                    data-section="pedidos">
+                <span>🛒</span>
+                <span>Pedidos</span>
+            </button>
+
+            <button class="menu-item"
+                    data-section="produtos">
+                <span>🍔</span>
+                <span>Produtos</span>
+            </button>
+
+            <button class="menu-item"
+                    data-section="mesas">
+                <span>🪑</span>
+                <span>Mesas</span>
+            </button>
+
+            <button class="menu-item"
+                    data-section="estoque">
+                <span>📦</span>
+                <span>Estoque</span>
+            </button>
+
+            <button class="menu-item"
+                    data-section="clientes">
+                <span>👥</span>
+                <span>Clientes</span>
+            </button>
+
+            <button class="menu-item"
+                    data-section="caixa">
+                <span>💰</span>
+                <span>Caixa</span>
+            </button>
+
+            <button class="menu-item"
+                    data-section="relatorios">
+                <span>📈</span>
+                <span>Relatórios</span>
+            </button>
+
+            <button class="menu-item"
+                    data-section="configuracoes">
+                <span>⚙️</span>
+                <span>Configurações</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-mini">
+                <div class="avatar">N</div>
+
+                <div>
+                    <strong>Administrador</strong>
+                    <small>Restaurante Demo</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         ÁREA PRINCIPAL
+    ========================== -->
+
+    <main class="main">
+
+        <!-- TOPO -->
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="mobile-menu"
+                        id="mobileMenu">
+                    ☰
+                </button>
+
+                <div>
+                    <p class="welcome">Bem-vindo de volta 👋</p>
+                    <h2 id="pageTitle">Dashboard</h2>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="notification">
+                    🔔
+                    <span>3</span>
+                </button>
+
+                <div class="profile">
+                    <div class="avatar">N</div>
+
+                    <div class="profile-info">
+                        <strong>Administrador</strong>
+                        <small>Online</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             CONTEÚDO
+        ========================== -->
+
+        <div class="content">
+
+
+            <!-- DASHBOARD -->
+
+            <section class="section active"
+                     id="dashboard">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Visão geral</h3>
+                        <p>Acompanhe o desempenho do seu restaurante.</p>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="newOrder()">
+                        + Novo pedido
+                    </button>
+
+                </div>
+
+
+                <!-- CARDS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            💰
+                        </div>
+
+                        <div>
+                            <span>Faturamento hoje</span>
+                            <strong>R$ 2.847,50</strong>
+                            <small class="positive">
+                                ↑ 12,5% hoje
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            🛒
+                        </div>
+
+                        <div>
+                            <span>Pedidos</span>
+                            <strong>127</strong>
+                            <small class="positive">
+                                ↑ 8,2%
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            🧾
+                        </div>
+
+                        <div>
+                            <span>Ticket médio</span>
+                            <strong>R$ 22,42</strong>
+                            <small class="positive">
+                                ↑ 4,3%
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+                            👥
+                        </div>
+
+                        <div>
+                            <span>Clientes</span>
+                            <strong>1.284</strong>
+                            <small class="positive">
+                                ↑ 6,8%
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GRID PRINCIPAL -->
+
+                <div class="dashboard-grid">
+
+                    <!-- VENDAS -->
+
+                    <div class="panel sales-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Vendas da semana</h3>
+                                <p>Desempenho dos últimos 7 dias</p>
+                            </div>
+
+                            <select>
+                                <option>Esta semana</option>
+                                <option>Este mês</option>
+                                <option>Este ano</option>
+                            </select>
+
+                        </div>
+
+                        <div class="chart">
+
+                            <div class="chart-bars">
+
+                                <div class="bar-column">
+                                    <div class="bar"
+                                         style="height:55%"></div>
+                                    <span>Seg</span>
+                                </div>
+
+                                <div class="bar-column">
+                                    <div class="bar"
+                                         style="height:72%"></div>
+                                    <span>Ter</span>
+                                </div>
+
+                                <div class="bar-column">
+                                    <div class="bar"
+                                         style="height:48%"></div>
+                                    <span>Qua</span>
+                                </div>
+
+                                <div class="bar-column">
+                                    <div class="bar"
+                                         style="height:83%"></div>
+                                    <span>Qui</span>
+                                </div>
+
+                                <div class="bar-column">
+                                    <div class="bar"
+                                         style="height:91%"></div>
+                                    <span>Sex</span>
+                                </div>
+
+                                <div class="bar-column">
+                                    <div class="bar"
+                                         style="height:100%"></div>
+                                    <span>Sáb</span>
+                                </div>
+
+                                <div class="bar-column">
+                                    <div class="bar"
+                                         style="height:68%"></div>
+                                    <span>Dom</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRODUTOS -->
+
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h3>Mais vendidos</h3>
+                                <p>Hoje</p>
+                            </div>
+
+                            <button class="text-btn"
+                                    data-section="produtos">
+                                Ver todos
+                            </button>
+
+                        </div>
+
+
+                        <div class="product-list">
+
+                            <div class="product-row">
+
+                                <div class="product-number">
+                                    01
+                                </div>
+
+                                <div class="product-info">
+                                    <strong>X-Tudo</strong>
+                                    <span>84 vendidos</span>
+                                </div>
+
+                                <strong>
+                                    R$ 2.175
+                                </strong>
+
+                            </div>
+
+
+                            <div class="product-row">
+
+                                <div class="product-number">
+                                    02
+                                </div>
+
+                                <div class="product-info">
+                                    <strong>Combo Família</strong>
+                                    <span>52 vendidos</span>
+                                </div>
+
+                                <strong>
+                                    R$ 1.872
+                                </strong>
+
+                            </div>
+
+
+                            <div class="product-row">
+
+                                <div class="product-number">
+                                    03
+                                </div>
+
+                                <div class="product-info">
+                                    <strong>Batata G</strong>
+                                    <span>47 vendidos</span>
+                                </div>
+
+                                <strong>
+                                    R$ 658
+                                </strong>
+
+                            </div>
+
+
+                            <div class="product-row">
+
+                                <div class="product-number">
+                                    04
+                                </div>
+
+                                <div class="product-info">
+                                    <strong>Refrigerante</strong>
+                                    <span>41 vendidos</span>
+                                </div>
+
+                                <strong>
+                                    R$ 246
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PEDIDOS RECENTES -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h3>Pedidos recentes</h3>
+                            <p>Últimos pedidos realizados</p>
+                        </div>
+
+                        <button class="text-btn"
+                                data-section="pedidos">
+                            Ver pedidos
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Pedido</th>
+                                    <th>Cliente</th>
+                                    <th>Tipo</th>
+                                    <th>Valor</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>#1847</td>
+                                    <td>João Silva</td>
+                                    <td>Delivery</td>
+                                    <td>R$ 72,90</td>
+                                    <td>
+                                        <span class="status preparing">
+                                            Preparando
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#1846</td>
+                                    <td>Maria Santos</td>
+                                    <td>Mesa 08</td>
+                                    <td>R$ 94,50</td>
+                                    <td>
+                                        <span class="status ready">
+                                            Pronto
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#1845</td>
+                                    <td>Carlos Lima</td>
+                                    <td>Retirada</td>
+                                    <td>R$ 48,00</td>
+                                    <td>
+                                        <span class="status delivered">
+                                            Entregue
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#1844</td>
+                                    <td>Ana Costa</td>
+                                    <td>Mesa 03</td>
+                                    <td>R$ 126,90</td>
+                                    <td>
+                                        <span class="status delivered">
+                                            Entregue
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ALERTAS -->
+
+                <div class="alert-grid">
+
+                    <div class="alert-card warning">
+
+                        <div class="alert-icon">
+                            ⚠️
+                        </div>
+
+                        <div>
+                            <strong>Estoque baixo</strong>
+
+                            <p>
+                                3 produtos precisam de reposição.
+                            </p>
+
+                            <button data-section="estoque">
+                                Ver estoque →
+                            </button>
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-card info">
+
+                        <div class="alert-icon">
+                            📊
+                        </div>
+
+                        <div>
+                            <strong>Relatório disponível</strong>
+
+                            <p>
+                                O relatório semanal está pronto.
+                            </p>
+
+                            <button data-section="relatorios">
+                                Abrir relatório →
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PEDIDOS -->
+
+            <section class="section"
+                     id="pedidos">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Pedidos</h3>
+                        <p>Gerencie os pedidos do restaurante.</p>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="newOrder()">
+                        + Novo pedido
+                    </button>
+
+                </div>
+
+                <div class="empty-panel">
+
+                    <div>🛒</div>
+
+                    <h3>Central de pedidos</h3>
+
+                    <p>
+                        Aqui ficarão os pedidos de delivery,
+                        retirada e mesas.
+                    </p>
+
+                    <button class="primary-btn"
+                            onclick="newOrder()">
+                        Criar pedido
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRODUTOS -->
+
+            <section class="section"
+                     id="produtos">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Produtos</h3>
+                        <p>Gerencie o cardápio do restaurante.</p>
+                    </div>
+
+                    <button class="primary-btn"
+                            onclick="addProduct()">
+                        + Novo produto
+                    </button>
+
+                </div>
+
+                <div class="products-grid">
+
+                    <div class="menu-product">
+
+                        <div class="food-image">
+                            🍔
+                        </div>
+
+                        <div>
+                            <h4>X-Tudo</h4>
+                            <p>Hambúrguer completo</p>
+                            <strong>R$ 25,90</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-product">
+
+                        <div class="food-image">
+                            🍕
+                        </div>
+
+                        <div>
+                            <h4>Pizza Família</h4>
+                            <p>Pizza grande</p>
+                            <strong>R$ 59,90</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-product">
+
+                        <div class="food-image">
+                            🍟
+                        </div>
+
+                        <div>
+                            <h4>Batata G</h4>
+                            <p>Batata frita grande</p>
+                            <strong>R$ 14,00</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="menu-product">
+
+                        <div class="food-image">
+                            🥤
+                        </div>
+
+                        <div>
+                            <h4>Refrigerante</h4>
+                            <p>Lata 350ml</p>
+                            <strong>R$ 6,00</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- MESAS -->
+
+            <section class="section"
+                     id="mesas">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Mesas</h3>
+                        <p>Controle as mesas do restaurante.</p>
+                    </div>
+
+                </div>
+
+                <div class="tables-grid">
+
+                    <div class="restaurant-table available">
+                        <strong>M01</strong>
+                        <span>Livre</span>
+                    </div>
+
+                    <div class="restaurant-table occupied">
+                        <strong>M02</strong>
+                        <span>Ocupada</span>
+                    </div>
+
+                    <div class="restaurant-table available">
+                        <strong>M03</strong>
+                        <span>Livre</span>
+                    </div>
+
+                    <div class="restaurant-table reserved">
+                        <strong>M04</strong>
+                        <span>Reservada</span>
+                    </div>
+
+                    <div class="restaurant-table available">
+                        <strong>M05</strong>
+                        <span>Livre</span>
+                    </div>
+
+                    <div class="restaurant-table occupied">
+                        <strong>M06</strong>
+                        <span>Ocupada</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ESTOQUE -->
+
+            <section class="section"
+                     id="estoque">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Estoque</h3>
+                        <p>Controle seus ingredientes e produtos.</p>
+                    </div>
+
+                    <button class="primary-btn">
+                        + Entrada
+                    </button>
+
+                </div>
+
+                <div class="inventory-list">
+
+                    <div class="inventory-item">
+
+                        <div>
+                            <strong>Carne bovina</strong>
+                            <span>Estoque crítico</span>
+                        </div>
+
+                        <strong>4,5 kg</strong>
+
+                        <span class="stock critical">
+                            Crítico
+                        </span>
+
+                    </div>
+
+
+                    <div class="inventory-item">
+
+                        <div>
+                            <strong>Queijo</strong>
+                            <span>Estoque baixo</span>
+                        </div>
+
+                        <strong>8 kg</strong>
+
+                        <span class="stock low">
+                            Baixo
+                        </span>
+
+                    </div>
+
+
+                    <div class="inventory-item">
+
+                        <div>
+                            <strong>Refrigerante</strong>
+                            <span>Estoque normal</span>
+                        </div>
+
+                        <strong>124 un.</strong>
+
+                        <span class="stock normal">
+                            Normal
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CLIENTES -->
+
+            <section class="section"
+                     id="clientes">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Clientes</h3>
+                        <p>Gerencie seus clientes.</p>
+                    </div>
+
+                    <button class="primary-btn">
+                        + Novo cliente
+                    </button>
+
+                </div>
+
+                <div class="empty-panel">
+
+                    <div>👥</div>
+
+                    <h3>Base de clientes</h3>
+
+                    <p>
+                        Os clientes cadastrados aparecerão aqui.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CAIXA -->
+
+            <section class="section"
+                     id="caixa">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Caixa</h3>
+                        <p>Controle financeiro diário.</p>
+                    </div>
+
+                    <button class="primary-btn">
+                        Abrir caixa
+                    </button>
+
+                </div>
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">💵</div>
+                        <div>
+                            <span>Entradas</span>
+                            <strong>R$ 2.847,50</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">💸</div>
+                        <div>
+                            <span>Saídas</span>
+                            <strong>R$ 386,00</strong>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">💰</div>
+                        <div>
+                            <span>Saldo</span>
+                            <strong>R$ 2.461,50</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RELATÓRIOS -->
+
+            <section class="section"
+                     id="relatorios">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Relatórios</h3>
+                        <p>Analise os resultados do restaurante.</p>
+                    </div>
+
+                </div>
+
+                <div class="report-grid">
+
+                    <div class="report-card">
+                        <span>📊</span>
+                        <h3>Vendas</h3>
+                        <p>Analise suas vendas.</p>
+                        <button>Gerar relatório</button>
+                    </div>
+
+                    <div class="report-card">
+                        <span>📦</span>
+                        <h3>Estoque</h3>
+                        <p>Veja movimentações.</p>
+                        <button>Gerar relatório</button>
+                    </div>
+
+                    <div class="report-card">
+                        <span>💰</span>
+                        <h3>Financeiro</h3>
+                        <p>Controle receitas e despesas.</p>
+                        <button>Gerar relatório</button>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONFIGURAÇÕES -->
+
+            <section class="section"
+                     id="configuracoes">
+
+                <div class="section-header">
+
+                    <div>
+                        <h3>Configurações</h3>
+                        <p>Configure seu restaurante.</p>
+                    </div>
+
+                </div>
+
+                <div class="settings-panel">
+
+                    <label>
+                        Nome do restaurante
+                        <input type="text"
+                               value="Restaurante Demo">
+                    </label>
+
+                    <label>
+                        Telefone
+                        <input type="tel"
+                               placeholder="(00) 00000-0000">
+                    </label>
+
+                    <label>
+                        Endereço
+                        <input type="text"
+                               placeholder="Endereço do restaurante">
+                    </label>
+
+                    <button class="primary-btn">
+                        Salvar alterações
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- MODAL NOVO PEDIDO -->
+
+    <div class="modal"
+         id="orderModal">
+
+        <div class="modal-box">
+
+            <button class="modal-close"
+                    onclick="closeModal()">
+                ×
+            </button>
+
+            <h2>Novo pedido</h2>
+
+            <p>
+                Escolha como o pedido será realizado.
+            </p>
+
+            <div class="order-options">
+
+                <button onclick="selectOrder('Mesa')">
+                    🪑
+                    <strong>Mesa</strong>
+                    <span>Pedido no salão</span>
+                </button>
+
+                <button onclick="selectOrder('Delivery')">
+                    🛵
+                    <strong>Delivery</strong>
+                    <span>Pedido para entrega</span>
+                </button>
+
+                <button onclick="selectOrder('Retirada')">
+                    🛍️
+                    <strong>Retirada</strong>
+                    <span>Cliente busca no local</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
